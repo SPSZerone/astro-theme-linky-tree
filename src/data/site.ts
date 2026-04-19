@@ -53,7 +53,7 @@ export const site = {
     {
       href: 'https://twilight.me.seapianosnow.com',
       title: 'Theme - Twilight',
-      subtitle: '',
+      subtitle: 'Select Language, Change Theme Color, Light/Dark Mode',
       icon: '',
       trailingIcon: '',
       style: 'background-color: rgba(250, 204, 21, 0.125); color: rgb(250, 204, 21);',
