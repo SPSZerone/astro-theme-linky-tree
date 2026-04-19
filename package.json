@@ -7,7 +7,7 @@
   "author": {
     "name": "GNDX"
   },
-  "homepage": "https://linkytree.error427.com",
+  "homepage": "https://me.seapianosnow.com/astro-theme-linky-tree",
   "contributors": [
     {
       "name": "Oscar Barajas @gndx",
@@ -24,7 +24,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/gndx/linkytree.git"
+    "url": "https://github.com/SPSZerone/astro-theme-linky-tree.git"
   },
   "scripts": {
     "setup": "node scripts/setup.js",
@@ -40,5 +40,8 @@
     "astro": "^5.16.11",
     "tailwindcss": "^4.1.18"
   },
-  "type": "module"
+  "type": "module",
+  "overrides": {
+    "undici": "^7.24.0"
+  }
 }
