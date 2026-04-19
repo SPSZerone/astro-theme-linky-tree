@@ -67,7 +67,7 @@ export const site = {
       style: 'background-color: rgba(59, 130, 246, 0.125); color: rgb(59, 130, 246);',
     },
     {
-      href: 'https://astrogon.me.seapianosnow.com',
+      href: 'https://anglefeint.me.seapianosnow.com',
       title: 'Astrogon (Language | Geek, Cyberpunk, Sci-Fi, Retro Terminal)',
       subtitle: '语言 | 极客，赛博朋克，未来科幻，复古终端',
       icon: '',
@@ -75,7 +75,7 @@ export const site = {
       style: 'background-color: rgba(132, 204, 22, 0.125); color: rgb(132, 204, 22);',
     },
     {
-      href: 'https://anglefeint.me.seapianosnow.com',
+      href: 'https://astrogon.me.seapianosnow.com',
       title: 'Anglefeint (Light/Dark Mode | Glassmorphism, Soothing, Natural, Minimalist, Crisp, Modern, Functional)',
       subtitle: '浅色/深色 | 毛玻璃特效，治愈，自然，极简，清爽，现代，实用',
       icon: '',
