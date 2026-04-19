@@ -45,7 +45,6 @@ jobs:
         working-directory: ${{ env.BUILD_PATH }}
 
       - name: Build with Astro
-        # Astro 构建产物默认在 dist 目录
         run: |
           pnpm run build \
             --site "${{ steps.pages.outputs.origin }}" \
@@ -68,3 +67,15 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  trigger-for-spszerone-github-io:
+    name: Trigger for Repo spszerone.github.io Deployment
+    runs-on: ubuntu-latest
+    # needs: deploy
+    steps:
+      - name: Dispatch to Repo spszerone.github.io
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.spszerone_github_io_PUBLISH_PAT }}
+          repository: SPSZerone/spszerone.github.io
+          event-type: update-from-astro-theme-linky-tree
