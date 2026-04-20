@@ -51,24 +51,24 @@ export const site = {
 
   linkCards: [
     {
-      href: 'https://twilight.me.seapianosnow.com',
-      title: 'Twilight (Language, Theme Color, Light/Dark Mode | Glassmorphism, Modern & Minimalist, Card-based Layout, Fresh & Aesthetic)',
-      subtitle: '语言，主题色，浅色/深色 | 毛玻璃拟态，现代简约，卡片式布局，清新唯美',
-      icon: '',
-      trailingIcon: '',
-      style: 'background-color: rgba(250, 204, 21, 0.125); color: rgb(250, 204, 21);',
-    },
-    {
       href: 'https://darkness.me.seapianosnow.com',
-      title: 'Darkness (Modern Animations, Dark Aesthetics, Motion-Rich\nDark Tech / Sci-Fi, Futuristic, Cyber Neon, Deep Space / Starry, Immersive)',
+      title: 'Theme - Darkness (Modern Animations, Dark Aesthetics, Motion-Rich\nDark Tech / Sci-Fi, Futuristic, Cyber Neon, Deep Space / Starry, Immersive)',
       subtitle: '现代动画，阴暗美学，动作丰富 | 暗黑科技风，未来主义，赛博霓虹，深邃宇宙，沉浸式',
       icon: '',
       trailingIcon: '',
       style: 'background-color: rgba(59, 130, 246, 0.125); color: rgb(59, 130, 246);',
     },
     {
+      href: 'https://twilight.me.seapianosnow.com',
+      title: 'Theme - Twilight (Language, Theme Color, Light/Dark Mode | Glassmorphism, Modern & Minimalist, Card-based Layout, Fresh & Aesthetic)',
+      subtitle: '语言，主题色，浅色/深色 | 毛玻璃拟态，现代简约，卡片式布局，清新唯美',
+      icon: '',
+      trailingIcon: '',
+      style: 'background-color: rgba(250, 204, 21, 0.125); color: rgb(250, 204, 21);',
+    },
+    {
       href: 'https://anglefeint.me.seapianosnow.com',
-      title: 'Anglefeint (Language | Geek, Cyberpunk, Sci-Fi, Retro Terminal)',
+      title: 'Theme - Anglefeint (Language | Geek, Cyberpunk, Sci-Fi, Retro Terminal)',
       subtitle: '语言 | 极客，赛博朋克，未来科幻，复古终端',
       icon: '',
       trailingIcon: '',
@@ -76,7 +76,7 @@ export const site = {
     },
     {
       href: 'https://astrogon.me.seapianosnow.com',
-      title: 'Astrogon (Light/Dark Mode | Glassmorphism, Soothing, Natural, Minimalist, Crisp, Modern, Functional)',
+      title: 'Theme - Astrogon (Light/Dark Mode | Glassmorphism, Soothing, Natural, Minimalist, Crisp, Modern, Functional)',
       subtitle: '浅色/深色 | 毛玻璃特效，治愈，自然，极简，清爽，现代，实用',
       icon: '',
       trailingIcon: '',
