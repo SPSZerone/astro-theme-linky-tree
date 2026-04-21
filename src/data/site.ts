@@ -52,8 +52,8 @@ export const site = {
   linkCards: [
     {
       href: 'https://darkness.me.seapianosnow.com',
-      title: 'Homepage style: Dark Aesthetics | 主页风格：暗黑极客 (Modern Animations, Dark Aesthetics, Motion-Rich\nDark Tech / Sci-Fi, Futuristic, Cyber Neon, Deep Space / Starry, Immersive)',
-      subtitle: '现代动画，阴暗美学，动作丰富 | 暗黑科技风，未来主义，赛博霓虹，深邃宇宙，沉浸式',
+      title: 'Homepage style: Deep Space | 主页风格：深邃宇宙 (Modern Animations, Dark Aesthetics, Motion-Rich\nDark Tech / Sci-Fi, Futuristic, Cyber Neon, Deep Space / Starry, Immersive)',
+      subtitle: '现代动画，深色美学，动作丰富 | 暗黑科技，未来主义，赛博霓虹，深邃宇宙，沉浸式',
       icon: '',
       trailingIcon: '',
       style: 'background-color: rgba(59, 130, 246, 0.125); color: rgb(59, 130, 246);',
