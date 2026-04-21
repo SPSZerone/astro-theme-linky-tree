@@ -37,8 +37,10 @@ export const site = {
   profile: {
     avatarSrc: import.meta.env.BASE_URL + 'avatar.png',
     name: 'William Chen - 陈威 - SPS',
-    handle: '@ https://me.seapianosnow.com/',
-    bio: '🧑‍💻 游戏全栈开发者 | 🎵古典音乐 🎹钢琴 🎻小提琴 大提琴 | 🪂 跳伞 🚴‍♀️骑行 🏃‍♂️跑步 🎾网球',
+    // handle: '@ https://me.seapianosnow.com/',
+    // bio: '🧑‍💻 游戏全栈开发者 | 🎵古典音乐 🎹钢琴 🎻小提琴 大提琴 | 🪂 跳伞 🚴‍♀️骑行 🏃‍♂️跑步 🎾网球',
+    handle: '',
+    bio: '',
   },
 
   socialLinks: [

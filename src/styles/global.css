@@ -10,6 +10,16 @@
     --primary: 173 86% 50%;
     --secondary: 328 78% 60%;
     --accent: 270 78% 60%;
+
+    /* SPS CUSTOM */
+    /* Hero */
+    --font-heading: 'Sarasa Term SC Nerd', 'JetBrainsMono Nerd Font Mono', system-ui, sans-serif;
+    --font-body: 'Sarasa Term SC Nerd', 'JetBrainsMono Nerd Font Mono', system-ui, sans-serif;
+    --color-text: #F1F5F9;
+    --color-text-dim: #94A3B8;
+    --hero-subtitle-font-size: clamp(1.25rem, 3vw, 1.75rem);
+    --hero-subtitle-line-height: 1.6;
+    --hero-description-font-size: clamp(1rem, 1.5vw, 1.125rem);
   }
 
   body {
