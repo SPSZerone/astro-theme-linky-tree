@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import '../styles/global.css';
-import '@sps/styles/sps.css';
+import '@spstheme/styles/sps.css';
 
 import { site } from '../data/site';
 import FeaturedLink from '../components/FeaturedLink.astro';
@@ -11,7 +11,7 @@ import SocialLinks from '../components/SocialLinks.astro';
 import LinkCard from '../components/LinkCard.astro';
 import Footer from '../components/Footer.astro';
 
-import Home from '@sps/components/hero/Home.astro';
+import Home from '@spscommon/components/hero/Home.astro';
 
 const origin = new URL(site.seo.url).origin;
 const jsonLd = {
