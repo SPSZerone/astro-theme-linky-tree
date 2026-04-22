@@ -1,9 +1,5 @@
 ---
-// import favicon from '../assets/favicon.png';
-
-// SPS CUSTOM
-import favicon from '../../public/avatar.png';
-import {ClientRouter} from "astro:transitions";
+import favicon from '../assets/favicon.png';
 
 const {
   title = 'Links',
@@ -51,7 +47,6 @@ const resolvedTwitterTitle = twitterTitle ?? title;
     {twitterSite && <meta name='twitter:site' content={twitterSite} />}
     {twitterCreator && <meta name='twitter:creator' content={twitterCreator} />}
     <slot name='head' />
-    <ClientRouter />
   </head>
   <body>
     <slot />

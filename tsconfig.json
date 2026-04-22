@@ -6,6 +6,7 @@
     "paths": {
       "@styles/*": ["./src/styles/*"],
       "@/*": ["./src/*"],
+      "@public/*": ["./public/*"],
       "@spscommon/*": ["./sps/src/common/*"],
       "@spstheme/*": ["./sps/src/themes/linky-tree/*"]
     }
