@@ -11,6 +11,9 @@ importers:
       '@astrojs/cloudflare':
         specifier: ^12.6.12
         version: 12.6.13(astro@5.18.1(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.2)(typescript@5.9.3))(jiti@2.6.1)(lightningcss@1.32.0)
+      '@rexa-developer/tiks':
+        specifier: ^0.1.8
+        version: 0.1.8(react@19.2.5)
       '@tailwindcss/vite':
         specifier: ^4.1.18
         version: 4.2.2(vite@6.4.2(jiti@2.6.1)(lightningcss@1.32.0))
@@ -776,6 +779,17 @@ packages:
 
   '@poppinss/exception@1.2.3':
     resolution: {integrity: sha512-dCED+QRChTVatE9ibtoaxc+WkdzOSjYTKi/+uacHWIsfodVfpsueo3+DKpgU5Px8qXjgmXkSvhXvSCz3fnP9lw==}
+
+  '@rexa-developer/tiks@0.1.8':
+    resolution: {integrity: sha512-o7lrpg6njz9vHLSOlzrNL4eiuV1YUozJz8C6ZqDDFaQP9tLUvn+dqO9qoV2vRVWgm8vcuHTESplwBxoNeX73Mw==}
+    peerDependencies:
+      react: '>=18.0.0'
+      vue: '>=3.0.0'
+    peerDependenciesMeta:
+      react:
+        optional: true
+      vue:
+        optional: true
 
   '@rollup/pluginutils@5.3.0':
     resolution: {integrity: sha512-5EdhGZtnu3V88ces7s53hhfK5KSASnJZv8Lulpc04cWO3REESroJXg73DFsOmgbU2BhwV0E20bu2IDZb3VKW4Q==}
@@ -2719,6 +2733,10 @@ snapshots:
       supports-color: 10.2.2
 
   '@poppinss/exception@1.2.3': {}
+
+  '@rexa-developer/tiks@0.1.8(react@19.2.5)':
+    optionalDependencies:
+      react: 19.2.5
 
   '@rollup/pluginutils@5.3.0(rollup@4.60.2)':
     dependencies:
