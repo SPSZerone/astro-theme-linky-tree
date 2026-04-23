@@ -3,6 +3,7 @@
 
 // SPS CUSTOM
 import favicon from '../../../../../public/avatar.png';
+import AudioInit from '@spscommon/scripts/audio/Init.astro';
 import {ClientRouter} from "astro:transitions";
 
 const {
@@ -56,15 +57,7 @@ const resolvedTwitterTitle = twitterTitle ?? title;
 <body>
 <slot />
 
-<script>
-  import { tiks } from '@rexa-developer/tiks';
-
-  document.addEventListener('pointerdown', () => {
-    tiks.init({
-      volume: 1.0
-    });
-  }, { once: true });
-</script>
+<AudioInit />
 
 </body>
 </html>
