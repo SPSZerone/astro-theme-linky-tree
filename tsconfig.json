@@ -8,7 +8,7 @@
       "@/*": ["./src/*"],
       "@public/*": ["./public/*"],
       "@spscommon/*": ["./sps/common/src/*"],
-      "@spslocal/*": ["./sps/local/src/*"]
+      "@spscustom/*": ["./sps/custom/src/*"]
     }
   }
 }
