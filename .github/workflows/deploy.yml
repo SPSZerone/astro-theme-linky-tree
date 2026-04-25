@@ -1,9 +1,15 @@
-name: Deploy Astro site to Pages
+name: SPS Publish
 
 on:
   push:
-    branches: [ publish ]
+    branches:
+      - publish
+
   workflow_dispatch:
+
+  repository_dispatch:
+    types:
+      - sps_digital_garden_updated
 
 permissions:
   contents: read
@@ -14,15 +20,41 @@ concurrency:
   group: "pages"
   cancel-in-progress: true
 
-env:
-  BUILD_PATH: "."
-
 jobs:
   build:
+    name: Build
     runs-on: ubuntu-latest
+
+    env:
+      THEME: "linky-tree"
+      SPS_DG_PATH: "./sps-digital-garden"
+
     steps:
-      - name: Checkout source code
+      - name: Prepare Dynamic Environment Variables
+        run: |
+          echo "BUILD_PATH=./astro-theme-${{ env.THEME }}" >> $GITHUB_ENV
+
+      - name: Checkout
         uses: actions/checkout@v4
+        with:
+          path: ${{ env.BUILD_PATH }}
+          ref: 'publish'
+
+      - name: Checkout sps-digital-garden
+        uses: actions/checkout@v4
+        with:
+          repository: SPSZerone/sps-digital-garden
+          ref: main
+          path: ${{ env.SPS_DG_PATH }}
+          token: ${{ secrets.SPS_DG_PUBLISH_PAT }}
+
+      - name: Setup Nushell
+        uses: hustcer/setup-nu@v3
+        with:
+          nu-version: '0.112.2'
+
+      - name: "SPS Digital Garden -> scripts/publish.nu"
+        run: nu ${{ env.SPS_DG_PATH }}/scripts/publish.nu -s astro -t ${{ env.THEME }} -p ${{ env.BUILD_PATH }}
 
       - name: Install pnpm
         uses: pnpm/action-setup@v4
@@ -36,7 +68,7 @@ jobs:
           cache: "pnpm"
           cache-dependency-path: ${{ env.BUILD_PATH }}/pnpm-lock.yaml
 
-      - name: Setup Pages (获取基础路径)
+      - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
 
@@ -71,11 +103,19 @@ jobs:
   trigger-for-spszerone-github-io:
     name: Trigger for Repo spszerone.github.io Deployment
     runs-on: ubuntu-latest
-    # needs: deploy
     steps:
-      - name: Dispatch to Repo spszerone.github.io
-        uses: peter-evans/repository-dispatch@v3
-        with:
-          token: ${{ secrets.spszerone_github_io_PUBLISH_PAT }}
-          repository: SPSZerone/spszerone.github.io
-          event-type: update-from-astro-theme-linky-tree
+      - name: Send repository_dispatch event
+        run: |
+          curl -L \
+            -X POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${{ secrets.DOWNSTREAM_PAT }}" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            https://api.github.com/repos/SPSZerone/spszerone.github.io/dispatches \
+            -d '{
+              "event_type": "astro_theme_linky_tree_updated",
+              "client_payload": {
+                "source_commit": "${{ github.sha }}",
+                "message": "Content updated in astro-theme-linky-tree"
+              }
+            }'
