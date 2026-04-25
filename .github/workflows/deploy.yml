@@ -124,7 +124,7 @@ jobs:
             -d '{
               "event_type": "astro_theme_linky_tree_updated",
               "client_payload": {
-                "source_commit": "${{ github.sha }}"
+                "source_commit": "${{ github.sha }}",
                 "message": "Content updated in astro-theme-linky-tree"
               }
             }')
