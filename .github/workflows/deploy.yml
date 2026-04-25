@@ -100,8 +100,8 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-  trigger-for-spszerone-github-io:
-    name: Trigger for Repo spszerone.github.io Deployment
+  notify-downstream:
+    name: Notify spszerone.github.io
     # if: |
     #   (github.event_name == 'push' && github.ref == 'refs/heads/publish') ||
     #   (github.event_name == 'repository_dispatch' && github.event.action == 'sps_digital_garden_updated')
@@ -111,7 +111,11 @@ jobs:
     steps:
       - name: Send repository_dispatch event
         run: |
-          curl -L \
+          # 1. 执行 curl 请求
+          # -s: 静默模式（不显示下载进度条）
+          # -w "%{http_code}": 请求完成后，仅把 HTTP 状态码单独拿出来
+          # -o response.txt: 将真实的 API 返回内容（如报错 JSON）存入文件
+          HTTP_STATUS=$(curl -L -s -w "%{http_code}" -o response.txt \
             -X POST \
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: Bearer ${{ secrets.DOWNSTREAM_PAT }}" \
@@ -120,7 +124,19 @@ jobs:
             -d '{
               "event_type": "astro_theme_linky_tree_updated",
               "client_payload": {
-                "source_commit": "${{ github.sha }}",
+                "source_commit": "${{ github.sha }}"
                 "message": "Content updated in astro-theme-linky-tree"
               }
-            }'
+            }')
+          
+          # 2. 判断状态码
+          # 预期成功的状态码是 204 (No Content)
+          if [ "$HTTP_STATUS" -eq 204 ]; then
+            echo "✅ 成功触发下游构建 (HTTP $HTTP_STATUS)"
+          else
+            echo "❌ 触发失败！HTTP 状态码: $HTTP_STATUS"
+            echo "=== GitHub API 返回的错误信息 ==="
+            cat response.txt
+            # exit 1 强制中断当前流水线，将其标记为失败 (红叉)
+            exit 1 
+          fi
