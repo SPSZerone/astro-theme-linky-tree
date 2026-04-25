@@ -102,6 +102,11 @@ jobs:
 
   trigger-for-spszerone-github-io:
     name: Trigger for Repo spszerone.github.io Deployment
+    # if: |
+    #   (github.event_name == 'push' && github.ref == 'refs/heads/publish') ||
+    #   (github.event_name == 'repository_dispatch' && github.event.action == 'sps_digital_garden_updated')
+    if: |
+      (github.event_name == 'push' && github.ref == 'refs/heads/publish')
     runs-on: ubuntu-latest
     steps:
       - name: Send repository_dispatch event
