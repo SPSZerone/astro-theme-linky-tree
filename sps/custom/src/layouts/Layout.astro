@@ -7,9 +7,6 @@ import Audio from '@spscommon/scripts/audio/Audio.astro';
 import Effect from '@spscommon/components/effects/3DQuantumNeuralNetwork.astro'
 import {ClientRouter} from "astro:transitions";
 
-const randomTheme = Math.floor(Math.random() * 3);
-const randomInitFormation = Math.floor(Math.random() * 3);
-
 const {
   title = 'Links',
   ogTitle,
@@ -62,7 +59,7 @@ const resolvedTwitterTitle = twitterTitle ?? title;
 <slot />
 
 <Audio />
-<Effect lightTheme={randomTheme} darkTheme={randomTheme} initFormation={randomInitFormation} />
+<Effect lightRange={[0, 2]} darkRange={[0, 2]} formationRange={[0, 2]} />
 </body>
 </html>
 
