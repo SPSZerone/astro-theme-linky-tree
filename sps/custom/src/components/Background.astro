@@ -1,0 +1,26 @@
+---
+
+---
+
+<div id="background" class='fixed inset-0 overflow-hidden pointer-events-none'>
+  <div class='absolute inset-0 bg-background'></div>
+
+  <div class='blob blob-a'></div>
+  <div class='blob blob-b'></div>
+  <div class='blob blob-c'></div>
+
+  <div class='absolute inset-0 opacity-[0.02] bg-grid'></div>
+</div>
+
+<style>
+  #background {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+    cursor: crosshair;
+  }
+</style>
