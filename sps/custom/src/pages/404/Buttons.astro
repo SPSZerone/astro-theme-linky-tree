@@ -1,0 +1,74 @@
+---
+import { Icon } from "astro-icon/components";
+
+import { site as commonSite } from '@spscommon/config/site';
+import { site as customSite } from '@spscustom/config/site';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<div class="hero-buttons">
+  <a href={`${base}`} class="btn btn-primary tiks-success tiks-hover">
+    <Icon name="material-symbols:home" class="text-xl" />
+    <span set:html='Back to Home'></span>
+  </a>
+</div>
+
+
+<style>
+
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: var(--sps-hero-font-family);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .btn-primary {
+    background: var(--sps-hero-title-color-primary);
+    color: var(--sps-hero-btn-primary-text-color);
+    box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+  }
+
+  .btn-primary:hover {
+    background: #2563EB;
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
+  }
+
+  .btn-primary svg {
+    transition: transform 0.2s ease;
+  }
+
+  .btn-primary:hover svg {
+    transform: translateX(4px);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--sps-hero-btn-secondary-text-color);
+    border: 1px solid var(--sps-hero-title-color-border);
+  }
+
+  .btn-secondary:hover {
+    background: rgba(59, 130, 246, 0.1);
+    border-color: var(--sps-hero-title-color-primary);
+  }
+
+</style>
+
