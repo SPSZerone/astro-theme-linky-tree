@@ -11,6 +11,9 @@ const isDev = process.env.NODE_ENV === 'development';
 // https://astro.build/config
 export default defineConfig({
   trailingSlash: isDev ? 'ignore' : 'always',
+  devToolbar: {
+    enabled: false
+  },
   integrations: [icon()],
   vite: {
     plugins: [tailwindcss()],
